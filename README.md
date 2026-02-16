@@ -14,27 +14,25 @@ The example shows how to:
 ---
 
 ## Hardware
-
-- MCU: STM32L4Q5CGT6
-- PSRAM: ESP-PSRAM64H (64Mbit / 8MB)
-- Interface: Quad SPI (4-4-4)
+### MCU: STM32L4Q5CGT6 (LQFP48)
+### PSRAM: ESP-PSRAM64H (SOP8) (64Mbit / 8MB)
 - Max PSRAM clock supported: 133 MHz
+- The ESP-PSRAM64H is compatible with APS6404L-3SQR,
+and the memory-mapped configuration follows the same principles.
 
 The board I used is a Bluepill (LQFP64 package).
 Using a heat gun, soldering iron, and a microscope, I removed the original MCU and successfully soldered the STM32L4Q5CGT6 in its place.
+![DevBoard](images/DevBoard.jpg)
 
 
 
-The ESP-PSRAM64H is compatible with APS6404L-3SQR,
-and the memory-mapped configuration follows the same principles.
 
 ---
 ## Hardware Connections
 
-### MCU: STM32L4Q5CGT6 (LQFP48)
-### PSRAM: ESP-PSRAM64H (SOP8)
 
-## Hardware
+
+
 
 ### STM32L4Q5CGT6 Pinout
 ![STM32 Pinout](images/CubeMx%20Pinout.jpg)
