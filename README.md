@@ -20,6 +20,11 @@ The example shows how to:
 - Interface: Quad SPI (4-4-4)
 - Max PSRAM clock supported: 133 MHz
 
+The board I used is a Bluepill (LQFP64 package).
+Using a heat gun, soldering iron, and a microscope, I removed the original MCU and successfully soldered the STM32L4Q5CGT6 in its place.
+
+
+
 The ESP-PSRAM64H is compatible with APS6404L-3SQR,
 and the memory-mapped configuration follows the same principles.
 
@@ -29,11 +34,14 @@ and the memory-mapped configuration follows the same principles.
 ### MCU: STM32L4Q5CGT6 (LQFP48)
 ### PSRAM: ESP-PSRAM64H (SOP8)
 
+## Hardware
+
 ### STM32L4Q5CGT6 Pinout
-![STM32 Pinout](images/CubeMx Pinout.jpg)
+![STM32 Pinout](images/CubeMx%20Pinout.jpg)
 
 ### ESP-PSRAM64H Pinout
-![PSRAM Pinout](images/ESP-PSRAM64H_Pinout.png)
+![PSRAM Pinout](images/ESP-PSRAM64H_Pinout.jpg)
+
 Quad SPI (4-4-4) connection:
 
 | STM32 Pin | Signal | ESP-PSRAM64H Pin | Signal |
@@ -76,3 +84,19 @@ You can increase the frequency in STM32CubeMX once memory-mapped mode is verifie
 volatile uint8_t *psram = (uint8_t*)0x90000000;
 psram[offset] = value;
 uint8_t r = psram[offset];
+```
+
+
+## Memory-Mapped Test
+
+After enabling memory-mapped mode, the main loop writes a different value
+to PSRAM every second and reads it back.
+
+Example UART output:
+
+![UART output](images/PrintReadWrite.jpg)
+
+## Notes
+ I tried to retarget printf to UART but couldn’t make it work properly in this project,
+so I used HAL_UART_Transmit() directly instead.
+
