@@ -29,11 +29,14 @@ and the memory-mapped configuration follows the same principles.
 ### MCU: STM32L4Q5CGT6 (LQFP48)
 ### PSRAM: ESP-PSRAM64H (SOP8)
 
+## Hardware
+
 ### STM32L4Q5CGT6 Pinout
-![STM32 Pinout](images/CubeMx Pinout.jpg)
+![STM32 Pinout](images/CubeMx%20Pinout.jpg)
 
 ### ESP-PSRAM64H Pinout
-![PSRAM Pinout](images/ESP-PSRAM64H_Pinout.png)
+![PSRAM Pinout](images/ESP-PSRAM64H_Pinout.jpg)
+
 Quad SPI (4-4-4) connection:
 
 | STM32 Pin | Signal | ESP-PSRAM64H Pin | Signal |
